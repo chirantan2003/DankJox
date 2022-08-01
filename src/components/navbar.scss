@@ -1,0 +1,78 @@
+$font-size:       1.25rem;
+$split-position:  49%;
+$split-thickness: 0.15rem;
+$split-color:     #00FF41;
+
+
+.menu {
+  height: 10vh;
+  background-color: #111827;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.logo {
+    list-style: none;
+    font-size: $font-size + 1;
+
+    span {color: white}
+}
+
+.menuList {
+  font-size: $font-size;
+  line-height: 1.2;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+  gap: 30%;
+}
+
+.menuListItem {
+  position: relative;
+  color: transparent;
+  
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: $split-position;
+    left: -10%;
+    right: -10%;
+    height: $split-thickness;
+    border-radius: $split-thickness;
+    margin-top: -($split-thickness / 2);
+    background: $split-color;
+    transform: scale(0);
+    transition: transform .8s cubic-bezier(.16,1.08,.38,.98);
+    z-index: 1;
+  }
+}
+
+.mask {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  color: $split-color;
+  top: 0;
+  height: $split-position;
+  transition: all .8s cubic-bezier(.16,1.08,.38,.98);
+  
+  span { display: block; }
+}
+
+.mask + .mask {
+  top: $split-position - 0.1;
+  height: 100 - $split-position + 0.1;
+  
+  span { transform: translateY(-$split-position); }
+}
+
+.menuListItem:hover,
+.menuListItem:active {
+  .mask { color: #FFF; transform: skewX(12deg) translateX(5px); }
+  .mask + .mask { transform: skewX(12deg) translateX(-5px); }
+  &::before { transform: scale(1); }
+}

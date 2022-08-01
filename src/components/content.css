@@ -1,0 +1,48 @@
+  .content_outer {
+    margin: auto;
+    justify-content: space-between;
+    max-width: max-content;
+    gap: 5rem;
+    /* border: 1px solid white; */
+    display: flex;
+    overflow: hidden;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .content {
+    background-color: var(--green);
+    margin: auto;
+    width: 40vw;
+    min-height: 15vh;
+    border-radius: 5px;
+    padding: 2rem;
+    font-weight: 600;
+  }
+  
+  .content:hover {
+    cursor: pointer;
+  }
+  
+  .face {
+    max-height: 40vh;
+    max-width: 15vw;
+  }
+  
+  .face:hover {
+    cursor: pointer;
+  }
+  
+  .face[rotate="1"] {
+    animation: rotate 1s;
+  }
+
+  img{
+    height: 200rem;
+  }
+  
+  @keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }  
