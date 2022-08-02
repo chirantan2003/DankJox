@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# DankJox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Website generates random jokes with punchlines or facts depending on the oprion selected by the user. 
 
 ## Available Scripts
 
